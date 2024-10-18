@@ -1,17 +1,29 @@
 import React from "react";
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from "../ui/dialog";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "../ui/dialog";
+import { Icon } from "@iconify/react";
 import { Button } from "../ui/button";
 import ScalesNumberFilter from "../atoms/scalesNumberFilter";
 import { Text } from "../atoms/text";
 
-const FilterCard = ({ onScalesChange }: { onScalesChange: (scales: number | null) => void }) => {
+const FilterCard = ({
+  onScalesChange,
+}: {
+  onScalesChange: (scales: number | null) => void;
+}) => {
   return (
     <div className="bg-accent w-3/4 mx-auto">
       <Dialog>
         <DialogTrigger asChild>
           <Button variant="ghost">
-            <Icon icon="stash:filter-duotone" className="h-6 w-6 text-primary mr-1" />
+            <Icon
+              icon="stash:filter-duotone"
+              className="h-6 w-6 text-primary mr-1"
+            />
             <Text text="Filters" />
           </Button>
         </DialogTrigger>

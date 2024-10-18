@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import { Text } from "../atoms/text";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import Category from "../atoms/category";
@@ -25,25 +25,37 @@ const FlightCard: React.FC<{ flight: Flight }> = ({ flight }) => {
         </div>
         <div className="flex items-center font-bold space-x-3">
           <span>
-            <Icon icon="ion:paper-plane" className="h-6 w-6 text-primary transform rotate-90" />
+            <Icon
+              icon="ion:paper-plane"
+              className="h-6 w-6 text-primary transform rotate-90"
+            />
           </span>
           <Text text={`Destination: ${flight.destination}`} />
         </div>
         <div className="flex items-center font-bold space-x-3">
           <span>
-            <Icon icon="radix-icons:calendar" className="h-6 w-6 text-primary" />
+            <Icon
+              icon="radix-icons:calendar"
+              className="h-6 w-6 text-primary"
+            />
           </span>
           <Text text={`Date and time: ${flight.date} / ${flight.time}`} />
         </div>
         <div className="flex items-center font-bold space-x-3">
           <span>
-            <Icon icon="icon-park-outline:transfer" className="h-6 w-6 text-primary" />
+            <Icon
+              icon="icon-park-outline:transfer"
+              className="h-6 w-6 text-primary"
+            />
           </span>
           <Text text={`Number of scales: ${flight.scales}`} />
         </div>
         <div className="flex items-center font-bold space-x-3">
           <span>
-            <Icon icon="fluent-emoji-high-contrast:seat" className="h-6 w-6 text-primary" />
+            <Icon
+              icon="fluent-emoji-high-contrast:seat"
+              className="h-6 w-6 text-primary"
+            />
           </span>
           <Text text="Category: " />
           <Dialog>
@@ -61,7 +73,7 @@ const FlightCard: React.FC<{ flight: Flight }> = ({ flight }) => {
                         title: string;
                         description: string;
                         benefits: string[];
-                      }
+                      },
                     )
                   }
                   prices={flight.prices}
