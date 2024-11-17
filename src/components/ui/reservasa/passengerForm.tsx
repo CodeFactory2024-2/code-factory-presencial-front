@@ -89,13 +89,13 @@ const PassengerForm = ({
             <div className="flex items-center justify-between">
               <span className="text-muted-foreground">Nombres</span>
               <div>
-                <Input type="text" name="name" required />
+                <Input type="text" name="name" required id="name"/>
               </div>
             </div>
             <div className="flex items-center justify-between">
               <dt className="text-muted-foreground">Apellidos</dt>
               <div>
-                <Input type="text" name="lastName" required />
+                <Input type="text" name="lastName" required id="lastName"/>
               </div>
             </div>
             <div className="flex items-center justify-between">
@@ -104,6 +104,7 @@ const PassengerForm = ({
                 <select
                   className="w-full p-2 border border-gray-300 rounded-md"
                   name="typeDni"
+                  id="typeDni"
                   required
                 >
                   <option value="">Elija una opción</option>
@@ -128,6 +129,7 @@ const PassengerForm = ({
                   className="w-full p-2 border border-gray-300 rounded-md"
                   required
                   name="nationality"
+                  id="nationality"
                 >
                   <option value="">Elija una opción</option>
                   {countries.map((country) => (
@@ -142,13 +144,13 @@ const PassengerForm = ({
             <div className="flex items-center justify-between">
               <span className="text-muted-foreground">Edad</span>
               <div className="w-1/2">
-                <Input type="number" min={1} max={120} name="age" required />
+                <Input type="number" min={1} max={120} name="age" required id="age"/>
               </div>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-muted-foreground">Correo</span>
               <div>
-                <Input type="email" name="email" required />
+                <Input type="email" name="email" required id="email"/>
               </div>
             </div>
             <div className="flex items-center justify-between">
@@ -159,14 +161,14 @@ const PassengerForm = ({
             </div>
 
             <div className="flex justify-center">
-              <Button type="submit">Añadir pasajero</Button>
+              <Button type="submit" id="submitPasangger">Añadir pasajero</Button>
             </div>
             <Separator className="my-4" />
             <CardFooter className="flex items-center justify-between">
-              <Button type="button" onClick={previousStep}>
+              <Button type="button" onClick={previousStep} id="rightArrow2">
                 <AiFillCaretLeft />
               </Button>
-              <Button type="button" onClick={nextStep}>
+              <Button type="button" onClick={nextStep} id="leftArrow2">
                 <AiFillCaretRight />
               </Button>
             </CardFooter>

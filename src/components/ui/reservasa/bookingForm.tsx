@@ -99,6 +99,7 @@ const BookingForm = ({
                     <select
                       name="flight"
                       className="w-full p-2 border border-gray-300 rounded-md"
+                      id="flight"
                       required
                     >
                       <option value="">Seleccione un vuelo</option>
@@ -118,18 +119,18 @@ const BookingForm = ({
         </CardContent>
         <CardFooter className="flex justify-end">
           {!showPassengerCard ? (
-            <Button type="submit" className="flex ">
+            <Button type="submit" className="flex " id="rightArrow">
               <AiFillCaretRight />
             </Button>
           ) : (
             <div className="flex space-x-36">
               <div>
-                <Button type="button" onClick={previousStep}>
+                <Button type="button" onClick={previousStep} id="leftArrow">
                   <AiFillCaretLeft />
                 </Button>
               </div>
               <div>
-                <Button type="button" onClick={saveBooking}>
+                <Button type="button" onClick={saveBooking} id="submitBooking">
                   Guardar Reserva
                 </Button>
               </div>
