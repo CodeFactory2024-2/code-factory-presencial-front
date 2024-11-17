@@ -10,23 +10,6 @@ export default function SearchResults() {
   
   const { origin, destination, departureDate, returnDate, passengers, tripType } = router.query;
   const [flights, setFlights] = useState<Flight[]>([]);
-  const [filtroSeleccionado, setFiltroSeleccionado] = useState({
-    mejorPrecio: false,
-    vuelosDirectos: false,
-    vuelosConEscala: false
-  });
-  const [datosFiltrados, setDatosFiltrados] = useState<Flight[]>([]);
-
-  const handleFiltroSeleccionado = (filtro: string) => {
-    setFiltroSeleccionado({
-      ...filtroSeleccionado,
-    });
-
-    if(filtro === "mejorPrecio") {
-      const flightsWithPrice = flights.filter(flight => flight.price);
-      setDatosFiltrados(flightsWithPrice.sort((a, b) => (a.price ?? 0) - (b.price ?? 0)));
-    } 
-  };
 
   useEffect(() => {
     // Simulación de vuelos
