@@ -148,7 +148,11 @@ const AirplaneForm = ({ airplane, sendDataMutation }: IAirplaneFormProps) => {
                   </SelectItem>
                 ) : (
                   familiesQuery.data?.map((family) => (
-                    <SelectItem key={family.id} value={family.id.toString()}>
+                    <SelectItem
+                      key={family.id}
+                      value={family.id.toString()}
+                      id={family.name}
+                    >
                       {family.name}
                     </SelectItem>
                   ))
@@ -180,6 +184,7 @@ const AirplaneForm = ({ airplane, sendDataMutation }: IAirplaneFormProps) => {
             </span>
           </Label>
           <Button
+            id="add-seats-distribution-row"
             type="button"
             variant="default"
             onClick={handleSeatsDistributionAdd}
@@ -194,6 +199,7 @@ const AirplaneForm = ({ airplane, sendDataMutation }: IAirplaneFormProps) => {
         <div className="w-full flex gap-4 justify-between flex-wrap">
           {Object.entries(seatsDistribution).map(([index, value]) => (
             <div
+              id={`seats-distribution-${index}`}
               key={index}
               className="flex-[1_1_12rem] flex flex-col items-center w-full gap-4"
             >
@@ -232,6 +238,7 @@ const AirplaneForm = ({ airplane, sendDataMutation }: IAirplaneFormProps) => {
           Cancelar
         </Button>
         <Button
+          id="submit-airplane-form"
           type="submit"
           variant="default"
           disabled={sendDataMutation.isLoading}

@@ -263,6 +263,7 @@ export default function AirplaneTypesPage() {
           />
           <div className="flex gap-4 items-center">
             <Button
+              id="add-airplane-type"
               variant="default"
               className="inline-flex items-center gap-2"
               onClick={() =>
@@ -323,11 +324,12 @@ export default function AirplaneTypesPage() {
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
                   <TableRow
+                    id={row.original.id}
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
                   >
                     {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
+                      <TableCell key={cell.id} id={cell.column.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()

@@ -213,18 +213,22 @@ export default function FlightsPage() {
           <Dialog>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="h-8 w-8 p-0">
+                <Button variant="ghost" className="h-8 w-8 p-0" id="actions">
                   <span className="sr-only">Abrir Menu</span>
                   <DotsHorizontalIcon className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="end" id="actions-dropdown">
                 <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem className="inline-flex items-center w-full">
+                <DropdownMenuItem
+                  className="inline-flex items-center w-full"
+                  id="edit"
+                >
                   <PenIcon className="h-4 w-4 mr-2" />
                   Editar
                 </DropdownMenuItem>
                 <DropdownMenuItem
+                  id="view-details"
                   className="inline-flex items-center w-full"
                   onClick={() => {
                     setFlightDetailsId(row.original.id);
@@ -235,7 +239,10 @@ export default function FlightsPage() {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DialogTrigger asChild>
-                  <DropdownMenuItem className="inline-flex items-center w-full text-red-500 sm:hover:text-red-700 sm:hover:bg-red-100">
+                  <DropdownMenuItem
+                    className="inline-flex items-center w-full text-red-500 sm:hover:text-red-700 sm:hover:bg-red-100"
+                    id="delete"
+                  >
                     <TrashIcon className="h-4 w-4 mr-2" />
                     Eliminar
                   </DropdownMenuItem>
@@ -306,6 +313,7 @@ export default function FlightsPage() {
           <div className="flex gap-4 items-center">
             <Link href="flights/create">
               <Button
+                id="create-flight"
                 variant="default"
                 className="inline-flex items-center gap-2"
               >
@@ -364,6 +372,7 @@ export default function FlightsPage() {
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
                   <TableRow
+                    id={row.original.flightNumber}
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
                   >

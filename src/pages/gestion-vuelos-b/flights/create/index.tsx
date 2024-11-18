@@ -97,6 +97,7 @@ export default function CreateFlightPage() {
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label>Número de vuelo</Label>
             <Input
+              id="flight-number"
               placeholder="SA1234"
               type="text"
               value={flightNumber}
@@ -107,13 +108,17 @@ export default function CreateFlightPage() {
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label>Tipo de avión</Label>
             <Select value={airplaneTypeId} onValueChange={setAirplaneTypeId}>
-              <SelectTrigger>
+              <SelectTrigger id="airplane-type-select">
                 <SelectValue placeholder="Selecciona un tipo de avión" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
                   {airplaneTypesQuery.data?.map((airplaneType) => (
-                    <SelectItem key={airplaneType.id} value={airplaneType.id}>
+                    <SelectItem
+                      key={airplaneType.id}
+                      value={airplaneType.id}
+                      id={airplaneType.id}
+                    >
                       {airplaneType.type.name} - {airplaneType.id}
                     </SelectItem>
                   ))}
@@ -129,10 +134,14 @@ export default function CreateFlightPage() {
               value={flightTypeId}
               onValueChange={(e) => setFlightTypeId(e as "1" | "2")}
             >
-              <ToggleGroupItem variant="outline" value="1">
+              <ToggleGroupItem variant="outline" value="1" id="national-flight">
                 Nacional
               </ToggleGroupItem>
-              <ToggleGroupItem variant="outline" value="2">
+              <ToggleGroupItem
+                variant="outline"
+                value="2"
+                id="international-flight"
+              >
                 Internacional
               </ToggleGroupItem>
             </ToggleGroup>
@@ -142,6 +151,7 @@ export default function CreateFlightPage() {
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label>Precio</Label>
             <Input
+              id="price"
               placeholder="0.00"
               type="number"
               min={0}
@@ -152,6 +162,7 @@ export default function CreateFlightPage() {
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label>Porcentaje de sobrecargo</Label>
             <Input
+              id="surcharge-percentage"
               placeholder="0%"
               type="number"
               min={0}
@@ -162,6 +173,7 @@ export default function CreateFlightPage() {
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label>Porcentaje de impuestos</Label>
             <Input
+              id="tax-percentage"
               placeholder="0%"
               type="number"
               min={0}
@@ -175,6 +187,7 @@ export default function CreateFlightPage() {
             <Label>Salida</Label>
             <div className="flex gap-4">
               <Input
+                id="departure-airport"
                 placeholder="Aeropuerto (IATA)"
                 type="text"
                 min={0}
@@ -182,6 +195,7 @@ export default function CreateFlightPage() {
                 onChange={(e) => setOriginIata(e.target.value)}
               />
               <Input
+                id="departure-date"
                 type="datetime-local"
                 min={0}
                 value={departureDate}
@@ -193,6 +207,7 @@ export default function CreateFlightPage() {
             <Label>Llegada</Label>
             <div className="flex gap-4">
               <Input
+                id="arrival-airport"
                 placeholder="Aeropuerto (IATA)"
                 type="text"
                 min={0}
@@ -200,6 +215,7 @@ export default function CreateFlightPage() {
                 onChange={(e) => setDestinationIata(e.target.value)}
               />
               <Input
+                id="arrival-date"
                 type="datetime-local"
                 min={0}
                 value={arrivalDate}
@@ -214,6 +230,7 @@ export default function CreateFlightPage() {
           </p>
         )}
         <Button
+          id="create-flight"
           className="w-fit"
           onClick={handleSubmit}
           disabled={mutation.isLoading || !allFieldsFilled}
