@@ -119,7 +119,7 @@ const PassengerForm = ({
             <div className="flex items-center justify-between space-x-3">
               <span className="text-muted-foreground">Número de documento</span>
               <div>
-                <Input type="text" name="dni" required />
+                <Input type="text" name="dni" required id="dni" />
               </div>
             </div>
             <div className="flex items-center justify-between">
