@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Quality Status
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=JuanPablo-A_Prubas-CodeFactory2024-2)](https://sonarcloud.io/summary/new_code?id=JuanPablo-A_Prubas-CodeFactory2024-2)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JuanPablo-A_Prubas-CodeFactory2024-2&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JuanPablo-A_Prubas-CodeFactory2024-2) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JuanPablo-A_Prubas-CodeFactory2024-2&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JuanPablo-A_Prubas-CodeFactory2024-2) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=JuanPablo-A_Prubas-CodeFactory2024-2&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=JuanPablo-A_Prubas-CodeFactory2024-2)
+
+<hr/>
 
 ## Getting Started
 
