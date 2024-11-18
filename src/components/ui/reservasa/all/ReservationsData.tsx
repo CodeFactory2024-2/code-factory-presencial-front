@@ -9,7 +9,7 @@ export const ReservationsData = () => {
     const { data } = useQuery<ReservationPassenger>(GET_RESERVATIONS_PASSENGER)
     return (
         <Table>
-            <TableCaption>Lista de reservas</TableCaption>
+            <TableCaption id="bookingList">Lista de reservas</TableCaption>
             <TableHeader>
                 <TableRow>
                     <TableHead>Pasajero</TableHead>
