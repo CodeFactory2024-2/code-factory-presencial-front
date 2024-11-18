@@ -19,7 +19,7 @@ export default function SearchForm( { inputFields, inputFieldsCalendar, InputSea
 
   const router = useRouter();
 
-  const [tripType, setTripType] = useState('roundTrip'); 
+  const [tripType, setTripType] = useState<string | undefined>(); 
   const [searchParams, setSearchParams] = useState({
     origin: '',
     destination: '',
@@ -45,14 +45,12 @@ export default function SearchForm( { inputFields, inputFieldsCalendar, InputSea
   };
 
   const isValid = useMemo(() => {
-    return searchParams.origin !== '' && searchParams.destination !== '' && searchParams.departureDate !== '' && searchParams.returnDate !== '' && searchParams.passengers >= 1;
+    return searchParams.origin !== '' && searchParams.destination !== '' 
   }, [searchParams]);
-
-  console.log(searchParams, tripType);
+  
   return (
     <form onSubmit={handleSubmit} className='flex w-auto xl:w-11/12 p-4 rounded-lg shadow-md border justify-around items-center gap-3'>
         <RadioGroup
-          defaultValue="roundTrip"
           className="flex space-x-4"
           onValueChange={(value) => setTripType(value)}
         >
