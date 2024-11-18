@@ -156,19 +156,19 @@ const PassengerForm = ({
             <div className="flex items-center justify-between">
               <span className="text-muted-foreground">Telefono</span>
               <div>
-                <Input type="text" name="phone" />
+                <Input type="text" name="phone" id="phone" />
               </div>
             </div>
 
             <div className="flex justify-center">
-              <Button type="submit" id="submitPasangger">Añadir pasajero</Button>
+              <Button type="submit" id="submitPassenger">Añadir pasajero</Button>
             </div>
             <Separator className="my-4" />
             <CardFooter className="flex items-center justify-between">
-              <Button type="button" onClick={previousStep} id="rightArrow2">
+              <Button type="button" onClick={previousStep} id="leftArrow2">
                 <AiFillCaretLeft />
               </Button>
-              <Button type="button" onClick={nextStep} id="leftArrow2">
+              <Button type="button" onClick={nextStep} id="rightArrow2">
                 <AiFillCaretRight />
               </Button>
             </CardFooter>
