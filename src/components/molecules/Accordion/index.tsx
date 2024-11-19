@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import MainText from "@/components/atoms/MainText/index";
-import { text } from "node:stream/consumers";
 
 type Items = {
   item: string;
