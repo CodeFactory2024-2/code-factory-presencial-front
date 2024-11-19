@@ -6,7 +6,6 @@ import { useMutation } from "@apollo/client";
 import { DELETE_RESERVATION_PASSENGER } from "@/graphql/mutation/reservation";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { DeleteDialog } from "./DeleteDialog";
 import Link from "next/link";
 import Tooltip from '@mui/material/Tooltip';
@@ -15,15 +14,16 @@ import Tooltip from '@mui/material/Tooltip';
 
 
 const ReservationTable = ({
-    reservation
+    reservation,
+    refetch
 }:
     {
-        reservation: AllReservationsPassenger
+        reservation: AllReservationsPassenger,
+        refetch: () => void
     }) => {
 
     const [deleteReservationPassenger] = useMutation(DELETE_RESERVATION_PASSENGER)
     const [openDelete, setOpenDelete] = useState(false)
-    const router = useRouter()
 
     const handleClose = () => {
         setOpenDelete(false)
@@ -47,7 +47,7 @@ const ReservationTable = ({
             console.log(error)
         }
         setOpenDelete(false)
-        router.reload()
+        refetch()
     }
 
     const getFormattedDate = (date: Date) => {

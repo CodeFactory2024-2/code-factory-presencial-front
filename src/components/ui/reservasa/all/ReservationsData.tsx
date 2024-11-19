@@ -6,7 +6,7 @@ import ReservationTable from "./ReservationTable"
 
 export const ReservationsData = () => {
 
-    const { data } = useQuery<ReservationPassenger>(GET_RESERVATIONS_PASSENGER)
+    const { data, refetch } = useQuery<ReservationPassenger>(GET_RESERVATIONS_PASSENGER)
     return (
         <Table>
             <TableCaption id="bookingList">Lista de reservas</TableCaption>
@@ -25,7 +25,7 @@ export const ReservationsData = () => {
             {data && (
                 <TableBody>
                     {data?.allReservationPassengers.map((reservation) => (
-                        <ReservationTable reservation={reservation} key={reservation.id} />
+                        <ReservationTable reservation={reservation} key={reservation.id} refetch={refetch} />
                     ))}
                 </TableBody>
             )}
