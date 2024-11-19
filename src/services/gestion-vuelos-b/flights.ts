@@ -107,21 +107,7 @@ export const getFlightById = async (id: string) => {
   return response.getFlightById;
 };
 
-export const createFlight = async (input: {
-  flightNumber: string;
-  originIata: string;
-  destinationIata: string;
-  departureDate: string;
-  arrivalDate: string;
-  departureTime: string;
-  arrivalTime: string;
-  price: number;
-  taxPercentage: number;
-  surchargePercentage: number;
-  flightTypeId: string;
-  airplaneTypeId: string;
-  statusId: string;
-}) => {
+export const createFlight = async (input: FlightPayload) => {
   const mutation = `
     mutation(
       $flightNumber: String!, 

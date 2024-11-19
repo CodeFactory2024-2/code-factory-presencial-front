@@ -56,3 +56,22 @@ export type Flight = {
   airplaneType: AirplaneType;
   status: Status;
 };
+
+export type FlightPayload = {
+  flightNumber: string;
+  originIata: string;
+  destinationIata: string;
+  departureDate: string;
+  arrivalDate: string;
+  departureTime: string;
+  arrivalTime: string;
+  price: number;
+  taxPercentage: number;
+  surchargePercentage: number;
+  flightTypeId: string;
+  airplaneTypeId: string;
+  statusId: string;
+}
+export type FlightUpdatePayload = FlightPayload & {
+  id: string;
+}
