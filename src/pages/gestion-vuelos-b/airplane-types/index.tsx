@@ -252,6 +252,7 @@ export default function AirplaneTypesPage() {
         <h1 className="text-4xl font-bold">Aeronaves</h1>
         <div className="flex items-center py-4 gap-4 justify-between">
           <Input
+            id="filter-airplane-type-model"
             placeholder="Filtrar por modelo"
             value={
               (table.getColumn("modelo")?.getFilterValue() as string) ?? ""
