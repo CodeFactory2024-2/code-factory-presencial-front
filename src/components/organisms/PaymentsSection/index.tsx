@@ -31,6 +31,8 @@ const Index = () => {
     <div className="flex flex-col w-[500px] justify-center p-5">
       <ModalAlert modalState={modalState} onClose={() => setModalState(false)}>
         <AlertMessage
+          idText="id-alert-message"
+          idTitle="id-alert-title"
           title="Lo sentimos"
           text="Por favor selecciona un método de pago antes de continuar."
           
@@ -38,7 +40,7 @@ const Index = () => {
       </ModalAlert>
 
       <div className="">
-        <FloatBadge text="¿Cómo vas a pagar?" />
+        <FloatBadge id="how-will-you-pay" text="¿Cómo vas a pagar?" />
         <form className="w-full max-w-md space-y-4 mt-5">
           {paymentMethods.map((method) => (
             <PaymentMethod
@@ -54,7 +56,7 @@ const Index = () => {
       </div>
 
       <div className="mt-10">
-        <FloatBadge text="Otros métodos de pago" />
+        <FloatBadge id="another-payment-methods" text="Otros métodos de pago" />
         <form className="w-full max-w-md space-y-4 mt-5">
           <PaymentMethod
             id={5}

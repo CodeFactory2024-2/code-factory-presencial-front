@@ -32,6 +32,7 @@ const Accordion = ({
       {itemsBetween && priceTitle ? (
         <div className="w-full">
           <div
+            id={id}
             className={`flex items-center justify-between w-full py-5 font-medium rtl:text-right ${
               accordion ? "border-none" : "border-b-2 border-gray-200"
             } focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 gap-3 cursor-pointer`}

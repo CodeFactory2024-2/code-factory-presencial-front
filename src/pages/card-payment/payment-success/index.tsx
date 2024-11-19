@@ -13,8 +13,8 @@ const PaymentSucces = () => {
 
   return (
     <div>
-      <ModalAlert modalState={true} onClose={() => goToHomePage() } >
-        <AlertMessage title="Compra exitosa" text="Disfruta tu viaje, gracias por confiar en nosotros" ></AlertMessage>
+      <ModalAlert id="modal-alert" modalState={true} onClose={() => goToHomePage() } >
+        <AlertMessage idText="successfull-buy" idTitle="successfull-buy-title" title="Compra exitosa" text="Disfruta tu viaje, gracias por confiar en nosotros" ></AlertMessage>
       </ModalAlert>
     </div>
   )

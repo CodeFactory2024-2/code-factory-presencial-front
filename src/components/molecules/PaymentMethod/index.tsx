@@ -32,7 +32,7 @@ const PaymentMethod = ({
         onChange={() => {}}
         className="mr-3 hidden"
       />
-      <MainText text={name} color={selected ? "text-white" : "text-black"} />
+      <MainText id={name} text={name} color={selected ? "text-white" : "text-black"} />
       {children}
     </label>
   );
