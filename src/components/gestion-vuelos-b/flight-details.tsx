@@ -16,6 +16,14 @@ interface IFlightDetailsProps {
   flightId: string;
 }
 
+/**
+ * Renders the flight details component.
+ *
+ * @component
+ * @param {IFlightDetailsProps} props - The component props.
+ * @param {string} props.flightId - The ID of the flight.
+ * @returns {JSX.Element} The rendered FlightDetails component.
+ */
 const FlightDetails = ({ flightId }: IFlightDetailsProps) => {
   const router = useRouter();
 

@@ -37,7 +37,7 @@ const MAX_ALLOWED_SEATS_ROWS = 8;
  * @param { IAirplaneFormProps } { airplane, handleSubmit }
  * @param { AirplaneType } airplane The airplane type to update
  * @param { (event: React.FormEvent<HTMLFormElement>) => void } handleSubmit The function to handle the form submission
- * @returns
+ * @returnss
  */
 const AirplaneForm = ({ airplane, sendDataMutation }: IAirplaneFormProps) => {
   const [seatsDistribution, setSeatsDistribution] = useState<

@@ -16,6 +16,15 @@ interface IAirplaneDetailsProps {
   airplaneId: string;
 }
 
+/**
+ * Component for displaying details of an airplane.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <AirplaneDetails airplaneId={123} />
+ * ```
+ */
 const AirplaneDetails = ({ airplaneId }: IAirplaneDetailsProps) => {
   const router = useRouter();
 
