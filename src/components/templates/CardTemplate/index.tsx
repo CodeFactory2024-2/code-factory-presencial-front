@@ -69,6 +69,7 @@ const Index = () => {
         <div className="p-4 flex flex-col sm:flex-row sm:justify-between items-center gap-4">
           <CardHeader />
           <MainButton
+            id="id-show-modal"
             text="Ver mas"
             handleClick={() => setModalState(true)}
           />

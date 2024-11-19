@@ -69,6 +69,7 @@ const Index = () => {
       <div className="flex justify-end mt-10">
         <Link href={selectedId !== null ? "/card-payment" : "#"}>
           <MainButton
+            id="id-continue-button"
             text="Continuar"
             handleClick={handleContinue}
           />

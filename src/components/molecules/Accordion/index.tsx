@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import MainText from "@/components/atoms/MainText/index";
+import { text } from "node:stream/consumers";
 
 type Items = {
   item: string;
@@ -9,6 +10,7 @@ type Items = {
 };
 
 type AccordionProps = {
+  id: string;
   textTitle: string;
   priceTitle?: string;
   bodyItems: Items[];
@@ -16,6 +18,7 @@ type AccordionProps = {
 };
 
 const Accordion = ({
+  id,
   textTitle,
   priceTitle,
   bodyItems,
@@ -34,9 +37,9 @@ const Accordion = ({
             } focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 gap-3 cursor-pointer`}
             onClick={() => setAccordion(toggleAccordion)}
           >
-            <MainText text={textTitle} />
+            <MainText id="id-text-title" text={textTitle} />
             <div className="flex items-center">
-              <MainText text={priceTitle} color="text-slate-500" weight="400" />
+              <MainText id="id-price-title" text={priceTitle} color="text-slate-500" weight="400" />
               <svg
                 data-accordion-icon
                 className={`w-3 h-3 ${
@@ -63,11 +66,13 @@ const Accordion = ({
               {bodyItems.map((item, index) => (
                 <li className="flex justify-between px-5 mb-1" key={index}>
                   <MainText
+                    id={`id-item-${index}`}
                     text={item.item}
                     color="text-slate-500"
                     weight="400"
                   />
                   <MainText
+                    id={`id-value-${index}`}
                     text={item.value}
                     color="text-slate-500"
                     weight="400"
@@ -85,7 +90,7 @@ const Accordion = ({
             } focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 gap-3 cursor-pointer`}
             onClick={() => setAccordion(toggleAccordion)}
           >
-            <MainText text={textTitle} />
+            <MainText id={`id-${textTitle}`} text={textTitle} />
             <div className="flex items-center">
               <svg
                 data-accordion-icon
@@ -113,11 +118,13 @@ const Accordion = ({
               {bodyItems.map((item, index) => (
                 <li className="flex justify-between px-5 mb-1" key={index}>
                   <MainText
+                    id={`id-item-${index}`}
                     text={item.item}
                     color="text-slate-500"
                     weight="400"
                   />
                   <MainText
+                    id={`id-value-${index}`}
                     text={item.value}
                     color="text-slate-500"
                     weight="400"

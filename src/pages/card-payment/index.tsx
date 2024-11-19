@@ -62,9 +62,9 @@ const Index = () => {
       </div>
       <div className="flex justify-between mt-6">
         <Link href="/">
-          <SecundaryButton text="Regresar" handleClick={() => {}} />
+          <SecundaryButton id="id-home-page-button" text="Regresar" handleClick={() => {}} />
         </Link>
-        <MainButton text="Pagar" handleClick={() => goToSucces()} />
+        <MainButton id="id-pay-button" text="Pagar" handleClick={() => goToSucces()} />
       </div>
       <ModalAlert modalState={modalState} onClose={() => setModalState(false)}>
         <AlertMessage

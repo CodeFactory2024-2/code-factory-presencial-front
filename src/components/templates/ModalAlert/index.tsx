@@ -14,7 +14,10 @@ const Modal = ({ children, onClose, modalState }: ModalProps) => {
           <div className="bg-white p-12 rounded-[6px]">
             {children}
             <div className="flex justify-end">
-              <MainButton text="Regresar" handleClick={onClose} />
+              <MainButton
+                id="id-closeModal" 
+                text="Regresar" 
+                handleClick={onClose} />
             </div>
           </div>
         </div>
