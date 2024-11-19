@@ -15,6 +15,7 @@ interface IConfirmDialogProps {
   confirmLabel?: string;
   isInformative?: boolean;
   onConfirm?: () => void;
+  confirmButtonId?: string;
 }
 
 const DEFAULT_MESSAGES = {
@@ -32,6 +33,7 @@ const ConfirmDialog = ({
   confirmLabel = DEFAULT_MESSAGES.confirm,
   isInformative = false,
   onConfirm = () => {},
+  confirmButtonId,
   ...props
 }: IConfirmDialogProps) => {
   return (
@@ -46,7 +48,12 @@ const ConfirmDialog = ({
             <DialogClose asChild>
               <Button variant="outline">{cancelLabel}</Button>
             </DialogClose>
-            <Button type="submit" variant="destructive" onClick={onConfirm}>
+            <Button
+              id={confirmButtonId}
+              type="submit"
+              variant="destructive"
+              onClick={onConfirm}
+            >
               {confirmLabel}
             </Button>
           </>

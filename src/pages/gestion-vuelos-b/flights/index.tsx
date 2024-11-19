@@ -256,6 +256,7 @@ export default function FlightsPage() {
               titleMessage="¿Estás seguro de que deseas eliminar este vuelo?"
               descriptionMessage={`Si seleccionas 'Eliminar', el vuelo con número de vuelo '${row.original.flightNumber}' será eliminado y no podrás recuperarlo.`}
               confirmLabel="Eliminar"
+              confirmButtonId="confirm-delete-flight"
             />
           </Dialog>
         );

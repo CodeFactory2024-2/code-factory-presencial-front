@@ -210,6 +210,7 @@ export default function AirplaneTypesPage() {
                 onConfirm={() => {
                   deleteMutation.mutate(airplaneType);
                 }}
+                confirmButtonId="confirm-delete-airplane"
               />
             </Dialog>
           </div>
