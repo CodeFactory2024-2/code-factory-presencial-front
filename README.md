@@ -7,6 +7,7 @@
 <hr/>
 
 # SITAS - Flight Management Module
+
 ![flight_management_mockup](https://github.com/user-attachments/assets/75c1cf7e-3016-48c5-9a33-e57fe7f2e324)
 
 Visit the website 🌐 [https://codefactory-gestion-de-vuelos-b.vercel.app/](https://codefactory-gestion-de-vuelos-b.vercel.app/)
@@ -44,7 +45,16 @@ git switch gestion-de-vuelos-B
 npm install
 ```
 
-4. Run the development server or build the project and run the server
+4. Create a `.env.local` file in the root of the project and add the following environment variables
+
+```env
+NEXT_PUBLIC_GRAPHQL_FLIGHT_MANAGEMENT_B_API_URL=[YOUR API URL]
+```
+
+> [!IMPORTANT]
+> The `NEXT_PUBLIC_GRAPHQL_FLIGHT_MANAGEMENT_B_API_URL` variable is the URL of the GraphQL API that the project will use to make requests to the server. If you are running the server locally, the URL will be `http://localhost:8080/graphql`.
+
+5. Run the development server or build the project and run the server
 
 ```bash
 npm run dev
