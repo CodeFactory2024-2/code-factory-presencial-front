@@ -61,9 +61,11 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import ConfirmDialog from "@/components/confirm-dialog";
 import { useToast } from "@/hooks/use-toast";
 import FlightDetails from "@/components/gestion-vuelos-b/flight-details";
+import { useRouter } from "next/router";
 
 export default function FlightsPage() {
   const { toast } = useToast();
+  const router = useRouter();
 
   const [flightDetailsId, setFlightDetailsId] = React.useState<string | null>(
     null
@@ -221,6 +223,7 @@ export default function FlightsPage() {
               <DropdownMenuContent align="end" id="actions-dropdown">
                 <DropdownMenuLabel>Acciones</DropdownMenuLabel>
                 <DropdownMenuItem
+                  onClick={() => router.push(`/gestion-vuelos-b/flights/edit/${row.original.id}`)}
                   className="inline-flex items-center w-full"
                   id="edit"
                 >
