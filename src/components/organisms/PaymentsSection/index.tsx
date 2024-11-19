@@ -29,7 +29,7 @@ const Index = () => {
 
   return (
     <div className="flex flex-col w-[500px] justify-center p-5">
-      <ModalAlert modalState={modalState} onClose={() => setModalState(false)}>
+      <ModalAlert id="alert-modal" modalState={modalState} onClose={() => setModalState(false)}>
         <AlertMessage
           idText="id-alert-message"
           idTitle="id-alert-title"

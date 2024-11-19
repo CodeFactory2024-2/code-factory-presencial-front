@@ -90,7 +90,7 @@ const Index = () => {
         </div>
       </div>
       <TotalPrice id="total-price" total={243.408} />
-      <Modal modalState={modalState} onClose={() => setModalState(false)}>
+      <Modal id="fly-modal" modalState={modalState} onClose={() => setModalState(false)}>
         <ModalDetails
           origin={origin}
           originBack={originBack}
