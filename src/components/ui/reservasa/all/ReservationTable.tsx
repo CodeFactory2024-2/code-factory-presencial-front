@@ -86,7 +86,8 @@ const ReservationTable = ({
                 </TableCell>
             </TableRow>
 
-            <DeleteDialog openDelete={openDelete} handleClose={handleClose} handleDelete={handleDeleteReservationPassenger} />
+            <DeleteDialog openDelete={openDelete} handleClose={handleClose} handleDelete={handleDeleteReservationPassenger} 
+            reservationId={reservation.id}/>
 
         </>
     )

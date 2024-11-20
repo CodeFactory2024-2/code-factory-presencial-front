@@ -3,11 +3,13 @@ import { Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material
 export const DeleteDialog = ({
     openDelete,
     handleClose,
-    handleDelete
+    handleDelete,
+    reservationId
 }: {
     openDelete: boolean,
     handleClose: () => void,
-    handleDelete: () => void
+    handleDelete: () => void,
+    reservationId: string
 }) => {
   return (
     <Dialog open={openDelete} onClose={handleClose} className="items-center justify-center bg-black bg-opacity-50">
@@ -19,7 +21,9 @@ export const DeleteDialog = ({
             <button onClick={handleClose} className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md">
                 Cancelar
             </button>
-            <button onClick={handleDelete} className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md">
+            <button onClick={handleDelete}
+            id={'confirmDelete' + reservationId} 
+            className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md">
                 Eliminar
             </button>
         </DialogActions>
