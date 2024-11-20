@@ -262,6 +262,7 @@ export default function AirplaneTypesPage() {
               table.getColumn("modelo")?.setFilterValue(event.target.value)
             }
             className="max-w-sm"
+            disabled={query.isLoading}
           />
           <div className="flex gap-4 items-center">
             <Button
