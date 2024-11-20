@@ -78,7 +78,8 @@ const ReservationTable = ({
                     </Tooltip>
 
                     <Tooltip title="Eliminar" placement="bottom">
-                        <button onClick={() => setOpenDelete(true)}>
+                        <button id={'delete' + reservation.id} 
+                        onClick={() => setOpenDelete(true)}>
                             <BsFillTrashFill className="hover:text-red-800  text-xl text-red-500" />
                         </button>
                     </Tooltip>
