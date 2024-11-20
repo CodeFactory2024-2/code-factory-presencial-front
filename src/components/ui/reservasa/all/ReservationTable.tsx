@@ -67,7 +67,7 @@ const ReservationTable = ({
                 <TableCell>{reservation.reservation.reservationCode}</TableCell>
                 <TableCell className="flex items-center space-x-8">
                     <Tooltip title="Ver detalles" placement="bottom">
-                        <Link
+                        <Link id={'search' + reservation.id}
                             href={{
                                 pathname: '/reservasa/all/[id]',
                                 query: { id: reservation.id }

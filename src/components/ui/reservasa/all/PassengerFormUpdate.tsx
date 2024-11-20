@@ -74,6 +74,7 @@ export const PassengerFormUpdate = ({
                 <div className="flex flex-col">
                     <label className="text-gray-700 font-semibold mb-1">Apellido</label>
                     <Input
+                        id="lastName-update"
                         type="text"
                         name="lastName"
                         required
@@ -164,6 +165,7 @@ export const PassengerFormUpdate = ({
             <div className="flex justify-center">
                 <Button
                     type="submit"
+                    id="confirmUpdate"
                     className="w-fit">Confirmar edición</Button>
             </div>
         </form>
