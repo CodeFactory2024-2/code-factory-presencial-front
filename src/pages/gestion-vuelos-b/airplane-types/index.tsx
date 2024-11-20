@@ -175,6 +175,7 @@ export default function AirplaneTypesPage() {
                 <DropdownMenuContent align="end">
                   <DropdownMenuLabel>Acciones</DropdownMenuLabel>
                   <DropdownMenuItem
+                    id="edit"
                     className="inline-flex items-center w-full"
                     onClick={() =>
                       router.push(
@@ -186,6 +187,7 @@ export default function AirplaneTypesPage() {
                     Editar
                   </DropdownMenuItem>
                   <DropdownMenuItem
+                    id="details"
                     className="inline-flex items-center w-full"
                     onClick={() => {
                       setAirplaneDetailsId(row.original.id);
@@ -196,7 +198,10 @@ export default function AirplaneTypesPage() {
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DialogTrigger asChild>
-                    <DropdownMenuItem className="inline-flex items-center w-full text-red-500 sm:hover:text-red-700 sm:hover:bg-red-100">
+                    <DropdownMenuItem
+                      className="inline-flex items-center w-full text-red-500 sm:hover:text-red-700 sm:hover:bg-red-100"
+                      id="delete"
+                    >
                       <TrashIcon className="h-4 w-4 mr-2" />
                       Eliminar
                     </DropdownMenuItem>
