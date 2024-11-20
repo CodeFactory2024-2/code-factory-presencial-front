@@ -223,7 +223,11 @@ export default function FlightsPage() {
               <DropdownMenuContent align="end" id="actions-dropdown">
                 <DropdownMenuLabel>Acciones</DropdownMenuLabel>
                 <DropdownMenuItem
-                  onClick={() => router.push(`/gestion-vuelos-b/flights/edit/${row.original.id}`)}
+                  onClick={() =>
+                    router.push(
+                      `/gestion-vuelos-b/flights/edit/${row.original.id}`
+                    )
+                  }
                   className="inline-flex items-center w-full"
                   id="edit"
                 >
@@ -301,6 +305,7 @@ export default function FlightsPage() {
         <h1 className="text-4xl font-bold">Vuelos</h1>
         <div className="flex items-center py-4 w-full justify-between">
           <Input
+            id="filter-flight-number"
             placeholder="Filtrar por número de vuelo"
             value={
               (table
