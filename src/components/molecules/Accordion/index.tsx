@@ -66,13 +66,13 @@ const Accordion = ({
               {bodyItems.map((item, index) => (
                 <li className="flex justify-between px-5 mb-1" key={index}>
                   <MainText
-                    id={`id-item-${index}`}
+                    id={`id-item-${item.item}`}
                     text={item.item}
                     color="text-slate-500"
                     weight="400"
                   />
                   <MainText
-                    id={`id-value-${index}`}
+                    id={`id-value-${item.value}`}
                     text={item.value}
                     color="text-slate-500"
                     weight="400"
