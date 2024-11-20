@@ -64,45 +64,48 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
         <div className="w-full flight-details flex gap-36">
           <div className="flex flex-col gap-5">
             <div>
-              <MainText text="Origen" weight="700" />
+              <MainText id="origin" text="Origen" weight="700" />
               <div>
                 <MainText
+                  id="origin-city-country-code"
                   text={`${origin.city} - ${origin.country} ${origin.code}`}
                   color="text-slate-500"
                 />
-                <MainText text={origin.departureDate} color="text-slate-500" />
+                <MainText id="origin-departure-date" text={origin.departureDate} color="text-slate-500" />
               </div>
             </div>
             <div>
-              <MainText text="Hora de Salida" weight="700" />
-              <MainText text={origin.departureTime} color="text-slate-500" />
+              <MainText id="origin-leave-time" text="Hora de Salida" weight="700" />
+              <MainText id="origin-departure-time" text={origin.departureTime} color="text-slate-500" />
             </div>
             <div>
-              <MainText text="Adultos" weight="700" />
-              <MainText text={`${adultsNumber}`} color="text-slate-500" />
+              <MainText id="origin-adults" text="Adultos" weight="700" />
+              <MainText id="origin-adults-number" text={`${adultsNumber}`} color="text-slate-500" />
             </div>
           </div>
           <div className="flex flex-col gap-5">
             <div>
-              <MainText text="Destino" weight="700" />
+              <MainText id="destiny" text="Destino" weight="700" />
               <div>
                 <MainText
+                  id="destiny-city-country-code"
                   text={`${destination.city} - ${destination.country} ${destination.code}`}
                   color="text-slate-500"
                 />
                 <MainText
+                  id="destiny-arrival-date"
                   text={destination.arrivalDate}
                   color="text-slate-500"
                 />
               </div>
             </div>
             <div>
-              <MainText text="Hora de Llegada" weight="700" />
-              <MainText text={destination.arrivalTime} color="text-slate-500" />
+              <MainText id="destination-arrival-time" text="Hora de Llegada" weight="700" />
+              <MainText id="destination-arrival-time-number" text={destination.arrivalTime} color="text-slate-500" />
             </div>
             <div>
-              <MainText text="Niños:" weight="700" />
-              <MainText text={`${childrenNumber}`} color="text-slate-500" />
+              <MainText id="children" text="Niños:" weight="700" />
+              <MainText id="children-number" text={`${childrenNumber}`} color="text-slate-500" />
             </div>
           </div>
         </div>
@@ -113,38 +116,43 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
           <div className="flex">
             <div className="flight-details flex flex-col gap-3">
               <div className="flex flex-col mb-6">
-                <MainTitle text="Ida" />
-                <MainText text={origin.departureDate} color="text-slate-500" />
+                <MainTitle id="origin-departure" text="Ida" />
+                <MainText id="origin-departure-date" text={origin.departureDate} color="text-slate-500" />
               </div>
               <div className="flex">
                 <div className="flex flex-col gap-5 mr-10">
                   <div>
-                    <SecondaryTitle text="Origen" />
+                    <SecondaryTitle id="origin" text="Origen" />
                     <MainText
+                      id="origin-code"
                       text={origin.code}
                       color="text-slate-500"
                       weight="bold"
                     />
                     <MainText
+                      id="origin-city-country"
                       text={`${origin.city} - ${origin.country}`}
                       color="text-slate-500"
                     />
                     <MainText
+                      id="origin-airport"
                       text={`${origin.airport}`}
                       color="text-slate-500"
                     />
                   </div>
                   <div>
-                    <SecondaryTitle text="Hora de Salida" />
+                    <SecondaryTitle id="origin-departure-tiem" text="Hora de Salida" />
                     <MainText
+                      id="origin-departure-time"
                       text={origin.departureTime}
                       color="text-slate-500"
                       weight="bold"
                     />
                   </div>
                   <div>
-                    <SecondaryTitle text="Duración" />
+                    <SecondaryTitle id="origin-time-in-fly" text="Duración" />
                     <MainText
+                      id="origin-time-in-fly-data"
                       text={origin.timeInFLy}
                       color="text-slate-500"
                       weight="bold"
@@ -154,32 +162,37 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
 
                 <div className="flex flex-col gap-5">
                   <div>
-                    <SecondaryTitle text="Destino" />
+                    <SecondaryTitle id="destiny" text="Destino" />
                     <MainText
+                      id="destination-code"
                       text={destination.code}
                       color="text-slate-500"
                       weight="bold"
                     />
                     <MainText
+                      id="destination-city-country"
                       text={`${destination.city} - ${destination.country}`}
                       color="text-slate-500"
                     />
                     <MainText
+                      id="destination-airport"
                       text={`${destination.airport}`}
                       color="text-slate-500"
                     />
                   </div>
                   <div>
-                    <SecondaryTitle text="Hora de Llegada" />
+                    <SecondaryTitle id="destiny-arrival-time" text="Hora de Llegada" />
                     <MainText
+                      id="destination-arrival-timenumber"
                       text={destination.arrivalTime}
                       color="text-slate-500"
                       weight="bold"
                     />
                   </div>
                   <div>
-                    <SecondaryTitle text="Número de vuelo" />
+                    <SecondaryTitle id="fly-number" text="Número de vuelo" />
                     <MainText
+                      id="fly-number-data"
                       text={flyNumber}
                       color="text-slate-500"
                       weight="bold"
@@ -188,6 +201,7 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
                 </div>
               </div>
               <Accordion
+                id="passengers"
                 textTitle="Pasaeros"
                 bodyItems={accordionItems}
                 itemsBetween={false}
@@ -197,8 +211,9 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
             <div>
               <div className="w-full flight-details flex flex-col gap-3">
                 <div className="flex flex-col mb-6">
-                  <MainTitle text="Regreso" />
+                  <MainTitle id="origin-back-departure-date" text="Regreso" />
                   <MainText
+                    id="origin-back-departure-date-data"
                     text={originBack.departureDate}
                     color="text-slate-500"
                   />
@@ -206,32 +221,37 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
                 <div className="flex">
                   <div className="flex flex-col gap-5 mr-10">
                     <div>
-                      <SecondaryTitle text="Origen" />
+                      <SecondaryTitle id="origin-text" text="Origen" />
                       <MainText
+                        id="origin-back-code"
                         text={originBack.code}
                         color="text-slate-500"
                         weight="bold"
                       />
                       <MainText
+                        id="origin-back-city-country"
                         text={`${originBack.city} - ${originBack.country}`}
                         color="text-slate-500"
                       />
                       <MainText
+                        id="origin-back-airport"
                         text={`${originBack.airport}`}
                         color="text-slate-500"
                       />
                     </div>
                     <div>
-                      <SecondaryTitle text="Hora de Salida" />
+                      <SecondaryTitle id="origin-back-departure-time" text="Hora de Salida" />
                       <MainText
+                        id="origin-back-departure-time-data"
                         text={originBack.departureTime}
                         color="text-slate-500"
                         weight="bold"
                       />
                     </div>
                     <div>
-                      <SecondaryTitle text="Duración" />
+                      <SecondaryTitle id="origin-back-time-in-fly" text="Duración" />
                       <MainText
+                        id="origin-back-time-in-fly-data"
                         text={originBack.timeInFLy}
                         color="text-slate-500"
                         weight="bold"
@@ -241,32 +261,37 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
 
                   <div className="flex flex-col gap-5">
                     <div>
-                      <SecondaryTitle text="Destino" />
+                      <SecondaryTitle id="destiny-back" text="Destino" />
                       <MainText
+                        id="destination-back-code"
                         text={destinationBack.code}
                         color="text-slate-500"
                         weight="bold"
                       />
                       <MainText
+                        id="destination-back-city-country"
                         text={`${destinationBack.city} - ${destinationBack.country}`}
                         color="text-slate-500"
                       />
                       <MainText
+                        id="destination-back-airport"
                         text={`${destinationBack.airport}`}
                         color="text-slate-500"
                       />
                     </div>
                     <div>
-                      <SecondaryTitle text="Hora de Llegada" />
+                      <SecondaryTitle id="destination-back-arrival-time" text="Hora de Llegada" />
                       <MainText
+                        id="destination-back-arrival-time-number"
                         text={destinationBack.arrivalTime}
                         color="text-slate-500"
                         weight="bold"
                       />
                     </div>
                     <div>
-                      <SecondaryTitle text="Número de vuelo" />
+                      <SecondaryTitle id="fly-number-back" text="Número de vuelo" />
                       <MainText
+                        id="fly-number-data-bakc"
                         text={flyNumber}
                         color="text-slate-500"
                         weight="bold"
@@ -275,6 +300,7 @@ const ModalDetails: React.FC<ModalDetailsProps> = ({
                   </div>
                 </div>
                 <Accordion
+                  id="passengers-back"
                   textTitle="Pasajeros"
                   bodyItems={accordionItems}
                   itemsBetween={false}

@@ -89,8 +89,8 @@ const Index = () => {
           <AccordionsSection />
         </div>
       </div>
-      <TotalPrice total={243.408} />
-      <Modal modalState={modalState} onClose={() => setModalState(false)}>
+      <TotalPrice id="total-price" total={243.408} />
+      <Modal id="fly-modal" modalState={modalState} onClose={() => setModalState(false)}>
         <ModalDetails
           origin={origin}
           originBack={originBack}

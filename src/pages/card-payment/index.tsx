@@ -36,7 +36,7 @@ const Index = () => {
   return (
     <main className="w-[500px] mx-auto bg-white shadow-xl mt-6 py-10 px-8 rounded-[6px]">
       <div className="flex justify-between items-center">
-        <MainTitle text="Pagar débito o crédito" />
+        <MainTitle id="buy-with-debit-or-credit" text="Pagar débito o crédito" />
         <IoAddCircleOutline className="text-3xl" />
       </div>
       <div className="w-full relative border mt-6 rounded-[6px] flex flex-col justify-center items-center">
@@ -66,11 +66,12 @@ const Index = () => {
         </Link>
         <MainButton id="id-pay-button" text="Pagar" handleClick={() => goToSucces()} />
       </div>
-      <ModalAlert modalState={modalState} onClose={() => setModalState(false)}>
+      <ModalAlert id="modal-alert" modalState={modalState} onClose={() => setModalState(false)}>
         <AlertMessage
+          idText="id-alert-message"
+          idTitle="id-alert-title"
           title="Lo sentimos"
           text="Por favor selecciona tarjeta antes de continuar."
-          
         />
       </ModalAlert>
     </main>

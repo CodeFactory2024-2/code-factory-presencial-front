@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import MainText from "@/components/atoms/MainText/index";
-import { text } from "node:stream/consumers";
 
 type Items = {
   item: string;
@@ -32,6 +31,7 @@ const Accordion = ({
       {itemsBetween && priceTitle ? (
         <div className="w-full">
           <div
+            id={id}
             className={`flex items-center justify-between w-full py-5 font-medium rtl:text-right ${
               accordion ? "border-none" : "border-b-2 border-gray-200"
             } focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 gap-3 cursor-pointer`}
@@ -66,13 +66,13 @@ const Accordion = ({
               {bodyItems.map((item, index) => (
                 <li className="flex justify-between px-5 mb-1" key={index}>
                   <MainText
-                    id={`id-item-${index}`}
+                    id={`id-item-${item.item}`}
                     text={item.item}
                     color="text-slate-500"
                     weight="400"
                   />
                   <MainText
-                    id={`id-value-${index}`}
+                    id={`id-value-${item.value}`}
                     text={item.value}
                     color="text-slate-500"
                     weight="400"
