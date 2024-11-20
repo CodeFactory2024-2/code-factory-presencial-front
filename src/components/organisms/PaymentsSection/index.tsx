@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import PaymentMethod from "@/components/molecules/PaymentMethod/index";
-import FloatBadge from "@/components/molecules/FloatBadge/index";
+import FloatBadge from "@/components/molecules/floatBadge/index";
 import MainButton from "@/components/atoms/MainButton/index";
 import AlertMessage from "@/components/molecules/AlertMessage/index";
 import ModalAlert from "@/components/templates/ModalAlert/index";

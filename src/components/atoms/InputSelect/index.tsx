@@ -10,7 +10,7 @@ type InputSelectProps = {
 
 const Input: React.FC<InputSelectProps> = ({ id, label, value, options, onChange }) => {
   return (
-    <div className="mb-4">
+    <div className="w-full mb-4">
       <label htmlFor={id} className="block text-sm font-medium text-gray-700">{label}</label>
       <select
         id={id}
