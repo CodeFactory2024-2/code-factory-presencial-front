@@ -1,6 +1,5 @@
 "use client";
 
-import MainButton from "@/components/atoms/MainButton";
 import SecundaryButton from "@/components/atoms/SecundaryButton";
 import { MainTitle } from "@/components/atoms/Title";
 import Link from "next/link";
