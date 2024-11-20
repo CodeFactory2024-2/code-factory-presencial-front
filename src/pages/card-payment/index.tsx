@@ -62,7 +62,7 @@ const Index = () => {
               label="Número de la tarjeta"
               onChange={(e) => setCardNumber(e.target.value)}
               value={cardNumber}
-              placeholder="XXXX-XXXX-XXXX"
+              placeholder="XXXX-XXXX-XXXX-XXXX"
             ></InputText>
             <div>
               <p>Fecha de caducidad</p>
