@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/router";
+import { useCheckinAContext } from "@/context/CheckinAContext";
 
 // Dato para testear
 const NUMBER_OF_PASSENGERS = 2;
@@ -37,6 +38,8 @@ export default function Confirmation() {
   const [section, setSection] = useState(0);
   const [currentPassenger, setCurrentPassenger] = useState(1);
   const [passengersData, setPassengersData] = useState<FormData[]>([]);
+
+  const { addPassenger } = useCheckinAContext();
 
   let firstPassengerData;
 
@@ -75,13 +78,14 @@ export default function Confirmation() {
 
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
     setPassengersData((prevData) => [...prevData, values]);
+    addPassenger(values);
     form.reset();
     setSection(0);
     setCurrentPassenger(currentPassenger + 1);
   };
 
   if (currentPassenger > NUMBER_OF_PASSENGERS) {
-    router.push("/checkinA");
+    router.push("/checkinA/boardingCard");
     console.log(passengersData);
   }
 

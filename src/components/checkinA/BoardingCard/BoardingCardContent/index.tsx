@@ -6,7 +6,6 @@ import { Bag, Baggage } from "../../Icons";
 import { BoardingCard } from "@/types/checkinA/BoardingCard";
 
 export const BoardingCardContent = ({
-  id,
   passenger,
   code,
   group,
@@ -81,7 +80,7 @@ export const BoardingCardContent = ({
             </div>
           </div>
           <p className="text-black text-sm mt-2">
-            Reservar: <strong>{id}Q528X</strong>
+            Reserva: <strong>{group}Q528X</strong>
           </p>
         </div>
         <div>

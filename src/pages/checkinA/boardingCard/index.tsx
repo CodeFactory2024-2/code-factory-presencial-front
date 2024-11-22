@@ -1,29 +1,33 @@
 import { BoardingCardContainer } from "@/components/checkinA/BoardingCard/BoardingCardContainer";
-
-const TEST_DATA = [
-  {
-    id: "1",
-    passenger: "Michi Naranja",
-    code: "MI 123",
-    group: "A",
-    seat: "1A",
-  },
-  {
-    id: "2",
-    passenger: "Michi Gris",
-    code: "MI 456",
-    group: "A",
-    seat: "2A",
-  },
-];
+import { useCheckinAContext } from "@/context/CheckinAContext";
+import { BoardingCard as BoardingCardType } from "@/types/checkinA/BoardingCard";
+import { useEffect, useState } from "react";
 
 export default function BoardingCard() {
+  const { passengers } = useCheckinAContext();
+
+  const [passengersCardData, setPassengersCardData] = useState<
+    BoardingCardType[]
+  >([]);
+
+  useEffect(() => {
+    const newData = passengers.map((pass, i) => ({
+      id: crypto.randomUUID(),
+      passenger: pass.fullName,
+      code: crypto.randomUUID().slice(0, 6).toUpperCase(),
+      group: "A",
+      seat: `${i + 1}A`,
+    }));
+
+    setPassengersCardData(newData);
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold mb-10">Tarjetas de Embarque</h1>
       <div className="flex gap-6">
-        {TEST_DATA.map((test) => (
-          <BoardingCardContainer key={test.id} {...test} />
+        {passengersCardData.map((passengerData) => (
+          <BoardingCardContainer key={passengerData.id} {...passengerData} />
         ))}
       </div>
     </div>
